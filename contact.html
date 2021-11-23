@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+
+         <!-- Asthreeta Schaft CSS -->
+        <link rel="stylesheet" href="join.css">
+        <link rel="stylesheet" href="responsive.css">
+       
+
+        <title>Contact Us | Khushiya Stay Healthier</title>
+</head>
+<body>
+        
+  <header class="header backgroundA">
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">Khushiya Stay Healthier</a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="joinus.html" class="nav-link">Join Us</a>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Asthreeta Schaft Main Content Area -->
+
+<section class="contact" id="contact">
+    <h1 class="text-center"><b>Contact Us</b></h1>
+       
+    <div class="form">
+        <form action="https://formspree.io/f/meqnjqrn" method="POST" id="my-form">
+        <input class="form-input" type="text" name="name" id="name" placeholder="Enter Your Name" required>
+        <input class="form-input" type="text" name="phone" id="phone" placeholder="Enter Your Phone Number" required>
+        <input class="form-input" type="email" name="email" id="email" placeholder="Enter Your Email" required>  
+        <textarea name="text" id="text" cols="85" rows="10" placeholder="Ellaborate your concern" style="margin: 0px; height: 150px; width: 264px;"></textarea>
+        <button type="submit" onclick="popup()" class="btn btn-dark btn-sm">Submit</button>
+        <button type="reset" class="btn btn-dark btn-sm">Clear</button>
+    </form>
+ </div>
+</section>
+
+  <!-- Asthreeta Schaft Footer Text -->
+  <footer class="backgroundA">
+    <p class="footer-text">
+        Copyright © 2021 | www.khushiyastayhealthier.com | All Rights Reserved | Developed and Managed by:- Asthreeta Schaft | For any queries contact at khushiyastayhealthier@gmail.com
+    </p>
+    </footer>
+
+   <!-- Optional Asthreeta Schaft JavaScript! -->
+   <script src="resp.js"></script>
+   
+   <script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        status.innerHTML = "Thanks for your submission!";
+        form.reset()
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
+</body>
+</html>
