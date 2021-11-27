@@ -182,13 +182,14 @@ div.shadow1{
 div.card{
     width: auto;
     text-align: center;
+    margin-top: 45px;
     border: 1px solid gray;
     box-shadow: 0px 4px 10px 0 gray, 0px 4px 10px 0 gray;
 }
 
 div.tex{
     padding: 10px;
-    font-size: 6px;
+    font-size: 12px;
     background-color: #fff;
     font-family: 'arvo', sans-serif;
 }
